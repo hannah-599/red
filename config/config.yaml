@@ -594,3 +594,9 @@ advanced:
     slack: 4000
   batch_send_interval: 3              # 批次发送间隔（秒）
   feishu_message_separator: "━━━━━━━━━━━━━━━━"
+push:
+  feishu:
+    enabled: true
+    webhook: https://open.feishu.cn/open-apis/bot/v2/hook/f10a6662-392f-4747-baaa-09450da90f1f
+    enable feishu push
+    
