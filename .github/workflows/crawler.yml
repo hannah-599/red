@@ -167,3 +167,16 @@ jobs:
           S3_REGION: ${{ secrets.S3_REGION }}
           GITHUB_ACTIONS: true
         run: python -m trendradar
+      - name: Run crawler
+        run: python -m trendradar
+
+      - name: Send to Feishu
+        run: |
+          curl -X POST "${{ secrets.FEISHU_WEBHOOK }}" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "msg_type": "text",
+            "content": {
+              "text": "🔥 热点抓取完成！"
+            }
+          }'
