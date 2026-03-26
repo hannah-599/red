@@ -169,10 +169,9 @@ jobs:
         run: python -m trendradar
       - name: Run crawler
         run: python -m trendradar
-
       - name: Send to Feishu
         run: |
-          curl -X POST "${{ secrets.FEISHU_WEBHOOK }}" \
+          curl -X POST "$FEISHU_WEBHOOK_URL" \
           -H "Content-Type: application/json" \
           -d '{
             "msg_type": "text",
